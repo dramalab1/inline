@@ -69,7 +69,9 @@ async def _(e):
     else:
         search, in_ch = sh[0], Var.CHANNEL_ID
     button = Button.switch_inline("Search again", query="keywords", same_peer=True)
-    await e.edit("Transferring Files Related to query in your personal chat.", buttons=button)
+    await e.edit(
+        "Transferring Files Related to query in your personal chat.", buttons=button
+    )
     cc = 0
     user = e.sender_id
     if e.sender.username:
